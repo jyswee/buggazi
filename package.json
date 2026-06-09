@@ -1,0 +1,43 @@
+{
+  "name": "buggazi",
+  "version": "1.6.0",
+  "description": "Buggazi CLI - project management for coding agents. Bug tracking, feature planning, sprint management. As easy as git.",
+  "bin": {
+    "bgz": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "buggazi",
+    "bug-tracking",
+    "feature-planning",
+    "sprint",
+    "kanban",
+    "agent",
+    "cli",
+    "project-management",
+    "coding-agent",
+    "ai-agent",
+    "claude",
+    "cursor",
+    "cline",
+    "windsurf",
+    "aider",
+    "codex"
+  ],
+  "author": "Joe Wee <joe@tyga.cloud>",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://buggazi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://buggazi.com"
+  },
+  "bugs": {
+    "url": "https://buggazi.com/feedback"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
