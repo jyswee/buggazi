@@ -1,8 +1,8 @@
-# buggazi
+# bgz
 
-> git tracks your code. bgz tracks your project.
+[![npm version](https://img.shields.io/npm/v/buggazi.svg)](https://www.npmjs.com/package/buggazi)
 
-Project management for coding agents. Bug tracking, feature planning, sprint management — as easy as git.
+Project management for coding agents. Bug tracking, feature planning, sprint management - as easy as git.
 
 ## Install
 
@@ -10,45 +10,33 @@ Project management for coding agents. Bug tracking, feature planning, sprint man
 npm install -g buggazi
 ```
 
-## Screenshots
-
-**Roadmap board** — plan releases across sprints
-![Roadmap board](https://prodmedia.tyga.host/public/tyga.cloud/landing/buggazi.com/dashboard/roadmap-board.png)
-
-**Bugs overview** — file, track, resolve with evidence
-![Bugs overview](https://prodmedia.tyga.host/public/tyga.cloud/landing/buggazi.com/dashboard/bugs-overview.png)
-
-**Features board** — kanban planning, priorities, dependency trees
-![Features overview](https://prodmedia.tyga.host/public/tyga.cloud/landing/buggazi.com/dashboard/features-overview.png)
-
-**Sprints** — attach features, track computed progress
-![Sprints overview](https://prodmedia.tyga.host/public/tyga.cloud/landing/buggazi.com/dashboard/sprints-overview.png)
+The npm package is `buggazi`; the command is `bgz`.
 
 ## Quick Start
 
 ```bash
-# Create a project ($10/mo Solo plan)
+# Create a project
 bgz signup my-project --local
 
 # File a bug
 bgz bug "Login form returns 500" -s P1
 
-# Plan a feature (optionally attach to a sprint)
-bgz feature "SSO support" -p P1 --sprint SPRINT-ID
-
-# Resolve a bug with reasoning
-bgz fix BUG-ID -c a3f2c1d -f "Added null check" -r "Root cause was missing validation"
+# Plan a feature
+bgz feature "SSO support" -p P1
 
 # See your project
 bgz snapshot
+
+# Resolve a bug
+bgz fix BUG-2026-0608-001 -c a3f2c1d -f "Added null check"
 
 # Full reference
 bgz --help
 ```
 
-## Cross-Company Contracts
+## Cross-Tenant Contracts
 
-File bugs and features straight into a partner's project over a contract — agent to agent.
+File bugs and features directly into a partner project over a contract — agent to agent.
 
 ```bash
 # File a bug to a partner, with a visual repro attached
@@ -58,108 +46,66 @@ bgz contract CTR-ID file-bug "Checkout 500s on submit" -s P1 --screenshot ./cras
 bgz contract CTR-ID update-bug BUG-ID -s P0
 ```
 
-Screenshots upload via a presigned S3 URL and are served from the CDN. External filings require human approval on the receiving side (EU AI Act compliant).
+Screenshots upload via a presigned S3 URL and are served from the CDN. External contract filings require human approval on the receiving side (EU AI Act compliant).
 
-## Works With
+## MCP Server
 
-**CLI agents** — `npm install -g buggazi`
-- Claude Code, Cursor, Cline, Windsurf, Codex, Copilot, Aider
+Prefer tools over a CLI? `bgz` ships an MCP server — point Claude Code (or any MCP client) at it and your agent gets bugs, features, sprints and contracts as native tools.
 
-**Web agents** — no install needed
-- Lovable, Bolt.new, Replit, Claude Web, Raycast
+```bash
+claude mcp add buggazi -- bgz mcp-serve
+```
+
+## Webhooks — close the loop
+
+Get notified when things change instead of polling. Agent A files a bug, the fix ships, the webhook fires, Agent A retries — no human in the middle.
+
+```bash
+bgz settings webhooks set --url https://your-stack.example/hooks --events "bug:resolved"
+bgz notifications          # or pull: what changed recently
+```
+
+Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`).
 
 ## Features
 
-- **Bug Tracking** — file, track, resolve with evidence + reasoning
-- **Feature Planning** — kanban board, priorities, bug-feature linking, dependency trees
-- **Sprint Management** — create sprints, attach features (`--sprint`), progress computed from linked features
-- **Cross-Company Contracts** — file bugs/features in partner projects with screenshot attachments (EU AI Act compliant)
-- **Migration** — import from Jira, Linear, Shortcut in 60 seconds
-- **Snapshots** — terminal project views, shareable HTML links
-- **MCP Server** — 24 native tools for Claude Code (`bgz mcp-serve`)
-- **Audit Trail** — immutable event log, CSV export
-- **Fail-loud validation** — bad args error clearly instead of creating junk records; covered by unit tests
+- **Bugs** - file, track, resolve with evidence and screenshots
+- **Features** - plan, prioritize, link to bugs, dependency trees
+- **Sprints** - create, track progress, kanban board
+- **Contracts** - cross-tenant bug/feature filing between projects, with screenshot attachments
+- **Snapshots** - terminal project views, shareable HTML links
+- **Webhooks & notifications** - signed HTTP callbacks + `bgz notifications` for polling
+- **MCP server** - native tool access for Claude Code and other MCP clients
+- **Audit trail** - EU AI Act compliant, immutable event log
 
-## Agent Integration
-
-Add to your CLAUDE.md, .cursorrules, .clinerules, or .windsurfrules:
-
-```
-## Buggazi
-Use the bgz CLI for bug tracking and feature planning.
-Run: bgz init --agent-schema (JSON schema of all commands + valid flags)
-Key is in .bgz/config.json (auto-loaded).
-```
-
-### MCP Server (Claude Code)
-
-Add `.mcp.json` to your project root:
-
-```json
-{
-  "mcpServers": {
-    "buggazi": {
-      "type": "stdio",
-      "command": "bgz",
-      "args": ["mcp-serve"]
-    }
-  }
-}
-```
-
-Claude Code discovers 24 Buggazi tools automatically — zero config beyond this file.
-
-### Remote MCP (no install)
-
-For web agents or anywhere you can't install the CLI:
-
-```json
-{
-  "mcpServers": {
-    "buggazi": {
-      "type": "sse",
-      "url": "https://mcp.buggazi.com/sse",
-      "headers": { "Authorization": "Bearer bgz_YOUR_API_KEY" }
-    }
-  }
-}
-```
-
-See the [Remote MCP quickstart](https://buggazi.com/docs/quickstart/remote-mcp.html).
-
-## Config
+## Per-Project Config
 
 ```bash
 bgz login --local --key YOUR_KEY    # saves to .bgz/config.json (project-local)
-bgz config                          # show which config is active
+bgz config                          # show active config
 ```
 
-Add `.bgz/` to your `.gitignore`.
+Config is per-project and auto-loaded from `.bgz/config.json`. Add `.bgz/` to your `.gitignore`.
 
-## Migration
+## Agent Integration
 
-```bash
-bgz migrate jira --from https://myco.atlassian.net --email me@co.com --token TOKEN --project PROJ
-bgz migrate linear --token TOKEN --team ENG
-bgz migrate shortcut --token TOKEN --project "My Project"
+Add to your CLAUDE.md, .cursorrules, .clinerules, .windsurfrules, or AGENTS.md:
+
 ```
+## Buggazi
+This project uses Buggazi for bug tracking and feature planning.
+Use the `bgz` CLI. Config is in .bgz/config.json (auto-loaded).
+If not configured: bgz login --local --key YOUR_KEY
 
-## Pricing
-
-Starts at **$10/mo**. No free tier.
-
-| Plan | Price | Projects | Team Members |
-|------|-------|----------|-------------|
-| Solo | $10/mo | 1 | 2 |
-| Team | $30/mo | 3 | 10 |
-| Scale | $75/mo | 10 | 50 |
-| Enterprise | Custom | Unlimited | Unlimited |
+Run `bgz init --agent-schema` — it returns every command + valid flags.
+This is the single source of truth: if it is not in the schema, do not use it.
+```
 
 ## Documentation
 
-- [Quickstart Guides](https://buggazi.com/docs/quickstart.html) — per-agent setup
-- [Full Reference](https://buggazi.com/llms.txt) — all commands + API
+- [Quickstart Guides](https://buggazi.com/docs/quickstart.html)
+- [Full Reference](https://buggazi.com/llms.txt)
 
 ## License
 
-Proprietary — Tyga.Cloud Ltd. See [LICENSE](./LICENSE).
+Proprietary - Tyga.Cloud Ltd. See [LICENSE](./LICENSE).

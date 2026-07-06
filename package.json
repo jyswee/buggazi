@@ -1,13 +1,14 @@
 {
   "name": "buggazi",
-  "version": "2.3.3",
+  "version": "2.4.0",
   "description": "Buggazi CLI - project management for coding agents. Bug tracking, feature planning, sprint management. As easy as git.",
   "bin": {
     "bgz": "bin/cli.js"
   },
   "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
     "build": "node scripts/build.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
     "buggazi",
@@ -25,19 +26,14 @@
     "cline",
     "windsurf",
     "aider",
-    "codex",
-    "copilot",
-    "lovable",
-    "bolt",
-    "replit",
-    "mcp"
+    "codex"
   ],
-  "author": "Joe Wee <jyswee@gmail.com>",
+  "author": "Joe Wee <joe@tyga.cloud>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://buggazi.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jyswee/buggazi"
+    "url": "https://buggazi.com"
   },
   "bugs": {
     "url": "https://buggazi.com/feedback"

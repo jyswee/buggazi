@@ -1,12 +1,21 @@
-Proprietary License
+Buggazi CLI - End User License Agreement
 
 Copyright (c) 2026 Tyga.Cloud Ltd. All rights reserved.
 
-This software and associated documentation files (the "Software") are the
-proprietary property of Tyga.Cloud Ltd. Unauthorized copying, modification,
-distribution, or use of this Software, via any medium, is strictly prohibited.
+Permission is granted to install and use this software via npm for its
+intended purpose (interacting with the Buggazi platform at buggazi.com).
 
-The Software is provided under a commercial license. Use of the Software
-requires an active subscription at https://buggazi.com.
+You may NOT:
+- Reverse-engineer, decompile, or disassemble this software
+- Redistribute, sublicense, or resell this software
+- Modify or create derivative works based on this software
+- Remove or alter any copyright notices contained in this software
 
-For licensing inquiries, contact: joe@tyga.cloud
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+TYGA.CLOUD LTD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Full terms of service: https://buggazi.com/terms
