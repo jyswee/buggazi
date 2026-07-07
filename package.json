@@ -1,6 +1,6 @@
 {
   "name": "buggazi",
-  "version": "2.4.0",
+  "version": "2.6.0",
   "description": "Buggazi CLI - project management for coding agents. Bug tracking, feature planning, sprint management. As easy as git.",
   "bin": {
     "bgz": "bin/cli.js"
