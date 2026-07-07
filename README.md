@@ -6,6 +6,8 @@ Project management for coding agents. Bug tracking, feature planning, sprint man
 
 > **git for your code. bgz for your agents.**
 
+![bgz demo](https://buggazi.com/img/bgz-demo.gif)
+
 ## Install
 
 ```bash
@@ -91,7 +93,19 @@ bgz settings webhooks set --url https://your-stack.example/hooks --events "bug:r
 bgz notifications          # or pull: what changed recently
 ```
 
-Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`).
+Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`). See [`examples/`](./examples) for a ready-to-run webhook receiver and a nightly GitHub Actions job.
+
+## Migrate from Jira / Linear / Shortcut
+
+Bring your existing issues across in one command. Guides and sample exports live in [`migrate/`](./migrate).
+
+```bash
+bgz migrate jira --from https://myco.atlassian.net --email me@co.com --token TOKEN --project PROJ --dry-run
+bgz migrate linear   --token KEY --team ENG
+bgz migrate shortcut --token TOKEN --project "My Project"
+```
+
+Run with `--dry-run` first to preview the mapping — see [`migrate/mapping.md`](./migrate/mapping.md).
 
 ## Features
 

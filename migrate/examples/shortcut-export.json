@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "id": 412,
+      "name": "Checkout returns 500 when coupon is removed",
+      "story_type": "bug",
+      "estimate": 8,
+      "description": "Removing a coupon leaves cart.total undefined; the tax step assumes a number and throws."
+    },
+    {
+      "id": 418,
+      "name": "Add SSO via Google Workspace",
+      "story_type": "feature",
+      "estimate": 5,
+      "description": "Enterprise trials keep asking for Google SSO before they'll commit."
+    },
+    {
+      "id": 421,
+      "name": "Order confirmation email missing line items",
+      "story_type": "bug",
+      "estimate": 3,
+      "description": "Template renders totals but not the per-item breakdown."
+    },
+    {
+      "id": 430,
+      "name": "Bulk export orders as CSV",
+      "story_type": "chore",
+      "estimate": null,
+      "description": "Ops wants a one-click export for reconciliation."
+    }
+  ]
+}

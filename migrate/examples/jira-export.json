@@ -1,0 +1,40 @@
+{
+  "issues": [
+    {
+      "key": "SHOP-412",
+      "fields": {
+        "summary": "Checkout returns 500 when coupon is removed",
+        "issuetype": { "name": "Bug" },
+        "priority": { "name": "Highest" },
+        "description": "Removing a coupon leaves cart.total undefined; the tax step assumes a number and throws."
+      }
+    },
+    {
+      "key": "SHOP-418",
+      "fields": {
+        "summary": "Add SSO via Google Workspace",
+        "issuetype": { "name": "Story" },
+        "priority": { "name": "High" },
+        "description": "Enterprise trials keep asking for Google SSO before they'll commit."
+      }
+    },
+    {
+      "key": "SHOP-421",
+      "fields": {
+        "summary": "Order confirmation email missing line items",
+        "issuetype": { "name": "Bug" },
+        "priority": { "name": "Medium" },
+        "description": "Template renders totals but not the per-item breakdown."
+      }
+    },
+    {
+      "key": "SHOP-430",
+      "fields": {
+        "summary": "Bulk export orders as CSV",
+        "issuetype": { "name": "Task" },
+        "priority": { "name": "Low" },
+        "description": "Ops wants a one-click export for reconciliation."
+      }
+    }
+  ]
+}

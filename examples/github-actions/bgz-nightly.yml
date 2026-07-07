@@ -1,0 +1,37 @@
+# Nightly Buggazi snapshot + change digest, straight from CI.
+#
+# Copy this to .github/workflows/bgz-nightly.yml in your own repo, then add a
+# repository secret named BUGGAZI_KEY (your project key from `bgz signup`).
+#
+# It prints a project snapshot and anything that changed recently — handy as a
+# standing "state of the project" you can glance at in the Actions log, or wire
+# into a Slack/webhook step.
+
+name: bgz nightly
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 07:00 UTC every day
+  workflow_dispatch:       # ...or run it on demand
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install bgz
+        run: npm install -g buggazi
+
+      - name: Configure bgz
+        run: bgz login --local --key "$BUGGAZI_KEY"
+        env:
+          BUGGAZI_KEY: ${{ secrets.BUGGAZI_KEY }}
+
+      - name: Project snapshot
+        run: bgz snapshot
+
+      - name: What changed recently
+        run: bgz notifications
