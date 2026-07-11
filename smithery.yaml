@@ -1,0 +1,11 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required: [apiKey]
+    properties:
+      apiKey:
+        type: string
+        description: Buggazi API key (bgz_...)
+  commandFunction: |-
+    (config) => ({ command: "bgz", args: ["mcp-serve"], env: { BGZ_API_KEY: config.apiKey } })

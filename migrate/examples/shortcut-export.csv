@@ -1,0 +1,10 @@
+Type,Name,Description,Estimate,State,Labels,Owners,Requester,Created,Updated,Deadline,Epic,ID
+bug,Payments webhook signature mismatch,"HMAC verification fails on retried events",8,Unstarted,payments,Kofi Mensah,Ana Ruiz,2026-04-03,2026-05-09,2026-05-19,Billing Reliability,4102
+feature,Team roles and permissions,"Granular RBAC for workspaces",5,Backlog,admin,Ana Ruiz,Kofi Mensah,2026-03-21,2026-05-01,,Access Control,4098
+bug,Infinite scroll skips items,"Pagination cursor is off by one",5,In Progress,feed,Kofi Mensah,Ana Ruiz,2026-04-07,2026-05-10,,,4110
+feature,Saved filters,"Persist board filters per user",3,Ready for Dev,ui,Ana Ruiz,Kofi Mensah,2026-04-01,2026-05-05,2026-06-01,Board UX,4087
+bug,Notification badge stays stuck,"Unread count does not clear on read",3,Unstarted,notifications,,Ana Ruiz,2026-04-12,2026-05-08,,,4115
+feature,CSV import for contacts,"Bulk add contacts from a spreadsheet",2,Backlog,data,Kofi Mensah,Ana Ruiz,2026-03-25,2026-04-27,,Data Import,4090
+bug,Session expires too early,"Idle timeout ignores active use",8,Done,auth,Kofi Mensah,Ana Ruiz,2026-02-18,2026-03-28,,,4066
+feature,Keyboard shortcuts,"Power-user navigation across the app",2,Backlog,ui,,Kofi Mensah,2026-03-15,2026-04-22,,Board UX,4081
+bug,Duplicate tags are allowed,"No uniqueness check when creating a tag",1,Unstarted,data,Ana Ruiz,Kofi Mensah,2026-04-15,2026-05-07,,,4120

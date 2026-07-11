@@ -1,0 +1,10 @@
+Title,Description,Priority,Status,Labels,Assignee,Estimate,Creator,Created,Updated,Due Date,ID
+API returns stale data after an update,"PATCH does not bust the read cache so clients see old values",Urgent,Triage,Bug,Lena Ford,5,Rob Iyer,2026-04-14,2026-05-12,2026-05-22,ENG-88
+Rate limit headers are missing,"Clients cannot self-throttle without X-RateLimit headers",High,Todo,api,Rob Iyer,3,Lena Ford,2026-04-16,2026-05-03,,ENG-84
+Real-time presence indicators,"Show who is online in shared documents",Medium,Backlog,collab,,8,Lena Ford,2026-03-28,2026-04-30,,ENG-72
+Drag-and-drop drops items on Firefox,"dnd handlers do not fire in Firefox",High,In Progress,Bug;ui,Lena Ford,2,Rob Iyer,2026-04-18,2026-05-10,,ENG-90
+Passkey login support,"WebAuthn passwordless sign-in",High,Todo,auth,Rob Iyer,8,Mei Chen,2026-04-02,2026-05-06,2026-06-15,ENG-61
+Email digest is sent twice,"Overlapping cron runs double-fire the digest",Medium,Triage,Bug;email,Rob Iyer,3,Lena Ford,2026-04-20,2026-05-11,,ENG-93
+Export boards to PDF,"Shareable board snapshots as PDF",Low,Backlog,reports,,5,Mei Chen,2026-03-19,2026-04-25,,ENG-70
+Mobile nav overlaps content,"z-index regression on small screens",Medium,Done,Bug;ui,Lena Ford,1,Rob Iyer,2026-02-22,2026-03-29,,ENG-55
+Slack notifications,"Post project updates to a Slack channel",Medium,Todo,integrations,Mei Chen,3,Lena Ford,2026-04-09,2026-05-04,,ENG-77

@@ -1,0 +1,11 @@
+Issue Type,Summary,Description,Priority,Status,Labels,Assignee,Custom field (Story Points),Reporter,Created,Updated,Due date,Issue key
+Bug,Checkout returns 500 when a coupon is removed,"Cart total goes null after removing a coupon and the tax step throws",Highest,In Progress,checkout;billing,Priya Nair,5,Sam Okafor,2026-04-02,2026-05-11,2026-05-20,ENG-412
+Bug,Login rate limiter blocks valid users,"Shared office IPs hit the per-IP cap and get 429s",High,To Do,auth,Dan Alvarez,3,Sam Okafor,2026-04-05,2026-05-02,,ENG-408
+Story,SSO via Okta,"Enterprise customers need SAML / Okta login before rollout",High,To Do,auth;enterprise,Priya Nair,13,Mei Chen,2026-03-18,2026-05-09,2026-06-30,ENG-377
+Bug,Avatar upload fails on HEIC images,"iOS photos are rejected by the uploader with no error",Medium,In Review,uploads,Dan Alvarez,2,Priya Nair,2026-04-01,2026-05-06,,ENG-401
+Task,Add dark mode to the dashboard,"Highly requested theming across the app",Medium,Backlog,ui,,3,Mei Chen,2026-03-10,2026-04-28,,ENG-360
+Bug,CSV export truncates at 10k rows,"Large exports are silently cut off with no warning",High,To Do,reports,Sam Okafor,5,Dan Alvarez,2026-04-08,2026-05-10,2026-05-25,ENG-419
+Story,Webhook retries with backoff,"Deliver events reliably to customer endpoints",Medium,To Do,webhooks,Mei Chen,8,Priya Nair,2026-03-22,2026-05-01,,ENG-355
+Bug,Invoice due dates off by one on DST,"Timezone edge case shifts billing dates",Low,Done,billing,Priya Nair,2,Sam Okafor,2026-02-14,2026-03-30,,ENG-333
+Story,Bulk archive projects,"Admins want to archive many projects at once",Low,Backlog,admin,,5,Mei Chen,2026-03-01,2026-04-20,,ENG-390
+Bug,Search ignores hyphenated terms,"Tokenizer splits on the hyphen and misses matches",Medium,To Do,search,Dan Alvarez,3,Priya Nair,2026-04-11,2026-05-08,,ENG-421

@@ -2,6 +2,14 @@
 
 Exactly how each source's issues become Buggazi bugs and features. This mirrors the importer — no surprises after you run it.
 
+## Supported source versions
+
+| Source | API we support | Not supported |
+|--------|----------------|---------------|
+| Jira | **Cloud** REST API **v3** (`/rest/api/3`) | Jira **Server / Data Center** (v2 API) |
+| Linear | current **GraphQL** API (`api.linear.app/graphql`) | — |
+| Shortcut | REST API **v3** (`/api/v3`) | — |
+
 ## Bug vs. feature
 
 | Source | Treated as a **bug** when… |
@@ -43,14 +51,30 @@ Everything else becomes a **feature**.
 | < 2 | P3 |
 | (none) | P2 |
 
-## What's carried over
+## What's carried over — by path
 
-Each imported item keeps:
+Coverage depends on **which path** you use. The **live API** (with a token) is full fidelity. The **CSV export** (`--file`, no token) carries only what a CSV export physically contains — comments, attachments, and cross-item links are never in a CSV, so they can't be imported that way.
 
-- **Comments** — re-attached, tagged with the original author and source key.
-- **A link back** to the source issue (`externalLinks`), so the trail is never lost.
-- **The source key** — `SHOP-412`, `ENG-142`, `sc-412` — for cross-referencing.
-- **Provenance** — `source: "<tool>-migration"` and `agent: "bgz-migrate"`, so you can always tell what came from where.
+| Field | Live API | CSV (`--file`) |
+|-------|:--------:|:--------------:|
+| Title, description | ✅ | ✅ |
+| Priority / severity | ✅ | ✅ |
+| Status | ✅ | ✅ |
+| Labels → category / tags | ✅ | ✅ |
+| Assignee | ✅ | ✅ (when column present) |
+| Backlink + source key | ✅ | ✅ |
+| Story points | ✅ | ✅ (when column present) |
+| Created / updated / due dates | ✅ | ✅ (when columns present) |
+| Reporter | ✅ | ✅ (when column present) |
+| **Comments** (with author) | ✅ | ❌ not in a CSV export |
+| **Sprints / cycles / iterations** | ✅ created + linked | ❌ not in a CSV export |
+| **Typed links** (epic/subtask/blocks/duplicates/relates) | ✅ | ❌ not in a CSV export |
+| **Attachments** | ✅ mirrored to your storage¹ | ❌ not in a CSV export |
+| Provenance (`source`, `agent`) | ✅ | ✅ |
+
+¹ Jira and Shortcut attachments are downloaded and mirrored to your storage. **Linear** attachments are integration/URL references (not file blobs), so they import as **external links** rather than mirrored files.
+
+Non-core fields (story points, dates, reporter, epic id) are preserved into each item's `metadata`, so nothing is lost even where Buggazi has no first-class field for it.
 
 ## Filtering an import
 

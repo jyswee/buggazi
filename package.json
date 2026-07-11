@@ -1,6 +1,6 @@
 {
   "name": "buggazi",
-  "version": "2.6.0",
+  "version": "2.8.8",
   "description": "Buggazi CLI - project management for coding agents. Bug tracking, feature planning, sprint management. As easy as git.",
   "bin": {
     "bgz": "bin/cli.js"
@@ -30,13 +30,13 @@
   ],
   "author": "Joe Wee <joe@tyga.cloud>",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://buggazi.com",
+  "homepage": "https://buggazi.ai",
   "repository": {
     "type": "git",
-    "url": "https://buggazi.com"
+    "url": "https://buggazi.ai"
   },
   "bugs": {
-    "url": "https://buggazi.com/feedback"
+    "url": "https://buggazi.ai/feedback"
   },
   "engines": {
     "node": ">=18"
