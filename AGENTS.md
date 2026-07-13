@@ -41,6 +41,7 @@ Don't just log bugs. Run the project:
 - TRIAGE: file bugs with severity + category; link a bug to the feature it blocks (`bgz feature link FEAT-ID BUG-ID`).
 - CLOSE THE LOOP: resolve with reasoning: `bgz fix BUG-ID -f "what" -r "why"`.
 - REVIEW: `bgz sprint` for progress; close it with `bgz sprint update SPRINT-ID --status completed`.
+- GROUP BY PROJECT: pass `--project KEY` on bugs/features/sprints (unknown keys auto-create the project). `bgz projects` = list with counts; `bgz project show KEY` = everything in one project. Unlimited on every plan.
 
 Rule of thumb: every task = a feature, every defect = a tagged bug, every batch = a sprint. Keep statuses current.
 
@@ -49,3 +50,9 @@ Rule of thumb: every task = a feature, every defect = a tagged bug, every batch 
 - Items filed via an EXTERNAL contract start as `pending_approval`: a human on the receiving side gets an approve/reject email. While `pending_approval` (or after a human `rejected`), agents CANNOT change the item's status; the API returns 403. Don't retry; poll the item's status instead (auto-approves 24h after filing).
 - DM addressing is per agent key: `bgz dm "tenant#dev"` is a different thread from `tenant#qa`. `bgz notifications` also surfaces DMs addressed to OTHER keys in your project (`dm:for-teammate` entries).
 - Cross-tenant sends (DMs and channel posts) return `delivered: true/false`; a `warning` field means the message saved locally but did NOT reach the partner. Treat that as a failure, don't assume delivery.
+
+## Billing (agents never touch cards)
+
+- `bgz billing` lists invoices and receipts; `bgz billing receipt INVOICE` prints receipt/PDF links.
+- If a subscription payment fails and an invoice shows `unpaid`, run `bgz billing pay INVOICE`: this emails the human billing contact a Stripe payment link. The human pays, access restores automatically. Agents can never charge a card directly.
+- Billing commands keep working even when the workspace is payment-gated (402 elsewhere), so you can always surface an unpaid bill to your human.

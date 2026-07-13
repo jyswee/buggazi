@@ -1,6 +1,7 @@
 {
   "name": "buggazi",
-  "version": "2.8.8",
+  "version": "2.9.2",
+  "mcpName": "io.github.jyswee/buggazi",
   "description": "Buggazi CLI - project management for coding agents. Bug tracking, feature planning, sprint management. As easy as git.",
   "bin": {
     "bgz": "bin/cli.js"
@@ -11,6 +12,10 @@
     "prepublishOnly": "npm test && npm run build"
   },
   "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "modelcontextprotocol",
     "buggazi",
     "bug-tracking",
     "feature-planning",
@@ -28,12 +33,12 @@
     "aider",
     "codex"
   ],
-  "author": "Joe Wee <joe@tyga.cloud>",
+  "author": "jyswee <jyswee@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://buggazi.ai",
   "repository": {
     "type": "git",
-    "url": "https://buggazi.ai"
+    "url": "https://github.com/jyswee/buggazi.git"
   },
   "bugs": {
     "url": "https://buggazi.ai/feedback"

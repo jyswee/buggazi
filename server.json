@@ -1,0 +1,52 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.jyswee/buggazi",
+  "description": "Project management for coding agents. Bugs, features, sprints. 71 tools, stdio or remote SSE.",
+  "repository": {
+    "url": "https://github.com/jyswee/buggazi",
+    "source": "github"
+  },
+  "version": "2.9.2",
+  "websiteUrl": "https://buggazi.ai",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "buggazi",
+      "version": "2.9.2",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "npx",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "mcp-serve",
+          "isRequired": true
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "BGZ_API_KEY",
+          "description": "Buggazi API key (bgz_...). Optional: without a key the server starts in onboarding mode and can self-signup.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "sse",
+      "url": "https://mcp.buggazi.com/sse",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer token using your Buggazi API key: 'Bearer bgz_...'",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

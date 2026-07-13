@@ -2,10 +2,9 @@ startCommand:
   type: stdio
   configSchema:
     type: object
-    required: [apiKey]
     properties:
       apiKey:
         type: string
-        description: Buggazi API key (bgz_...)
+        description: Buggazi API key (bgz_...). Optional; without one the server starts in onboarding mode and can self-signup via the buggazi_signup tool.
   commandFunction: |-
-    (config) => ({ command: "bgz", args: ["mcp-serve"], env: { BGZ_API_KEY: config.apiKey } })
+    (config) => ({ command: "bgz", args: ["mcp-serve"], env: config.apiKey ? { BGZ_API_KEY: config.apiKey } : {} })
