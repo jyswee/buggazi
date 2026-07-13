@@ -6,14 +6,14 @@
     "url": "https://github.com/jyswee/buggazi",
     "source": "github"
   },
-  "version": "2.9.2",
+  "version": "2.9.6",
   "websiteUrl": "https://buggazi.ai",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "buggazi",
-      "version": "2.9.2",
+      "version": "2.9.6",
       "transport": {
         "type": "stdio"
       },
@@ -42,8 +42,8 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer token using your Buggazi API key: 'Bearer bgz_...'",
-          "isRequired": true,
+          "description": "Bearer token using your Buggazi API key: 'Bearer bgz_...'. Optional: without one the server starts in onboarding mode and can self-signup via the buggazi_signup tool.",
+          "isRequired": false,
           "isSecret": true
         }
       ]

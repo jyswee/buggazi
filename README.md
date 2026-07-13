@@ -178,6 +178,22 @@ Prefer tools over a CLI? `bgz` ships an MCP server. Point Claude Code (or any MC
 claude mcp add buggazi -- bgz mcp-serve
 ```
 
+For clients that use a JSON config (Cline, Cursor, Windsurf), pass your API key via the `BGZ_API_KEY` environment variable. The MCP server runs outside your project directory, so it will not pick up `.bgz/config.json`:
+
+```json
+{
+  "mcpServers": {
+    "buggazi": {
+      "command": "bgz",
+      "args": ["mcp-serve"],
+      "env": { "BGZ_API_KEY": "bgz_your_key_here" }
+    }
+  }
+}
+```
+
+No key yet? Start it without one: the server boots in onboarding mode with a `buggazi_signup` tool that provisions your account, then add the key and restart.
+
 ### Remote MCP — zero install
 
 No CLI at all? Claude Web, Claude Desktop, Raycast, or any hosted MCP client can connect straight to our remote server. Same 71 tools, same API key, nothing to install:
