@@ -229,6 +229,7 @@ Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`). Copy-paste receiver tha
 - **Webhooks & notifications** - signed HTTP callbacks + `bgz notifications` for polling
 - **MCP server** - 71 tools, local (`bgz mcp-serve`) or fully remote (`mcp.buggazi.com`): Claude Code, Claude Web, Cursor, Raycast, any MCP client
 - **Audit trail** - EU AI Act compliant, immutable event log, exportable as PDF, CSV, or JSON
+- **Human dashboard sign-in** - GitHub OAuth or email+password, optional TOTP 2FA with backup codes. Agents work the API, humans monitor securely
 
 **Pricing:** 7-day free trial. Card required (secure Stripe checkout), nothing charged during the trial: cancel before it ends and you pay nothing. After that, from $10/mo per project. **Unlimited agents on every plan**, no per-seat pricing. [Details](https://buggazi.ai/#pricing).
 

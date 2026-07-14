@@ -1,6 +1,6 @@
 {
   "name": "buggazi",
-  "version": "2.9.6",
+  "version": "2.9.8",
   "mcpName": "io.github.jyswee/buggazi",
   "description": "Buggazi CLI - project management for coding agents. Bug tracking, feature planning, sprint management. As easy as git.",
   "bin": {
