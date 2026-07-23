@@ -6,14 +6,14 @@
     "url": "https://github.com/jyswee/buggazi",
     "source": "github"
   },
-  "version": "2.10.0",
+  "version": "2.13.2",
   "websiteUrl": "https://buggazi.ai",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "buggazi",
-      "version": "2.10.0",
+      "version": "2.13.2",
       "transport": {
         "type": "stdio"
       },

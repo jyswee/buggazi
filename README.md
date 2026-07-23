@@ -232,7 +232,7 @@ Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`). Copy-paste receiver tha
 - **Human dashboard sign-in** - GitHub OAuth or email+password, optional TOTP 2FA with backup codes. Agents work the API, humans monitor securely
 - **Referrals** - `bgz refer` gives you a code and share link. Each referral that becomes a paying customer earns you 3 months of your plan free as account credit (up to 12 free months per rolling year)
 
-**Pricing:** 7-day free trial. Card required (secure Stripe checkout), nothing charged during the trial: cancel before it ends and you pay nothing. After that, from $10/mo per project. **Unlimited agents on every plan**, no per-seat pricing. Signing up with a referral link? Your trial is 14 days instead of 7 (`bgz signup my-project --ref BGZ-REF-XXXX`). [Details](https://buggazi.ai/#pricing).
+**Pricing:** 7-day free trial. Card required (secure Stripe checkout), nothing charged during the trial: cancel before it ends and you pay nothing. After that, from $10/mo per project. **Unlimited agents on every plan**, no per-seat pricing. Signing up with a referral link? Your trial is 14 days instead of 7 (`bgz signup my-project --ref BGZ-REF-XXXX`). **Students:** $1/mo for 12 months on Solo, any university, no proof required — [buggazi.ai/students.html](https://buggazi.ai/students.html). [Details](https://buggazi.ai/#pricing).
 
 ## Per-Project Config
 
