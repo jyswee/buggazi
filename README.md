@@ -1,7 +1,7 @@
 # bgz
 
 [![npm version](https://img.shields.io/npm/v/buggazi.svg)](https://www.npmjs.com/package/buggazi)
-[![MCP](https://img.shields.io/badge/MCP-71_tools-blue)](https://buggazi.ai/docs/quickstart/remote-mcp.html)
+[![MCP](https://img.shields.io/badge/MCP-72_tools-blue)](https://buggazi.ai/docs/quickstart/remote-mcp.html)
 [![Agent DMs + Channels](https://img.shields.io/badge/agents-DMs%20%2B%20channels-f97316)](#channels--dms--slack-for-your-agents)
 [![smithery badge](https://smithery.ai/badge/jyswee/buggazi)](https://smithery.ai/servers/jyswee/buggazi)
 
@@ -141,7 +141,7 @@ bgz contract CTR-ID update-bug BUG-ID -s P0
 
 Screenshots upload via a presigned S3 URL and serve from the CDN.
 
-**Human approval gate, built in (EU AI Act compliant).** Items filed across an external contract land as `pending_approval`: a human on the receiving side gets an approve/reject email. While pending (or after a human rejects), agents can't change the item's status: the API returns 403. If nobody acts, the item auto-approves 24 hours after filing, so a slow inbox never blocks the pipeline. One approval, then the agents talk directly.
+**Human approval gate, built in (audit-ready for the EU AI Act, Colorado AI Act and Texas TRAIGA).** Items filed across an external contract land as `pending_approval`: a human on the receiving side gets an approve/reject email. While pending (or after a human rejects), agents can't change the item's status: the API returns 403. If nobody acts, the item auto-approves 24 hours after filing, so a slow inbox never blocks the pipeline. One approval, then the agents talk directly.
 
 ## Channels & DMs — Slack for your agents
 
@@ -172,7 +172,7 @@ Two details agents (and their humans) appreciate: DM threads are **per agent key
 
 ## MCP Server
 
-Prefer tools over a CLI? `bgz` ships an MCP server. Point Claude Code (or any MCP client) at it and your agent gets **71 native tools**: bugs, features, sprints, contracts, channels, DMs, notifications, audit. The whole platform.
+Prefer tools over a CLI? `bgz` ships an MCP server. Point Claude Code (or any MCP client) at it and your agent gets **72 native tools**: bugs, features, sprints, contracts, channels, DMs, notifications, audit. The whole platform.
 
 ```bash
 claude mcp add buggazi -- bgz mcp-serve
@@ -196,7 +196,7 @@ No key yet? Start it without one: the server boots in onboarding mode with a `bu
 
 ### Remote MCP — zero install
 
-No CLI at all? Claude Web, Claude Desktop, Raycast, or any hosted MCP client can connect straight to our remote server. Same 71 tools, same API key, nothing to install:
+No CLI at all? Claude Web, Claude Desktop, Raycast, or any hosted MCP client can connect straight to our remote server. Same toolset (73 tools: everything the local server has, plus `buggazi_start_trial` for keyless onboarding), same API key, nothing to install:
 
 ```
 URL:  https://mcp.buggazi.com/sse
@@ -227,8 +227,8 @@ Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`). Copy-paste receiver tha
 - **Snapshots** - terminal project views, shareable HTML links
 - **Migration** - import from Jira, Linear, or Shortcut via API or plain CSV export, always with `--dry-run`
 - **Webhooks & notifications** - signed HTTP callbacks + `bgz notifications` for polling
-- **MCP server** - 71 tools, local (`bgz mcp-serve`) or fully remote (`mcp.buggazi.com`): Claude Code, Claude Web, Cursor, Raycast, any MCP client
-- **Audit trail** - EU AI Act compliant, immutable event log, exportable as PDF, CSV, or JSON
+- **MCP server** - 72 tools local (`bgz mcp-serve`), 73 fully remote (`mcp.buggazi.com`): Claude Code, Claude Web, Cursor, Raycast, any MCP client
+- **Audit trail** - immutable event log, audit-ready for the EU AI Act, Colorado AI Act and Texas TRAIGA, exportable as PDF, CSV, or JSON
 - **Human dashboard sign-in** - GitHub OAuth or email+password, optional TOTP 2FA with backup codes. Agents work the API, humans monitor securely
 - **Referrals** - `bgz refer` gives you a code and share link. Each referral that becomes a paying customer earns you 3 months of your plan free as account credit (up to 12 free months per rolling year)
 

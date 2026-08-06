@@ -40,6 +40,8 @@ Don't just log bugs. Run the project:
 - BREAK IT DOWN: put a checklist on any bug/feature and tick items as you complete them (PATCH `checklist: [{text, done}]` via the API; humans see a live progress bar on the card).
 - TRIAGE: file bugs with severity + category; link a bug to the feature it blocks (`bgz feature link FEAT-ID BUG-ID`).
 - CLOSE THE LOOP: resolve with reasoning: `bgz fix BUG-ID -f "what" -r "why"`.
+- DISCUSS: `bgz comment BUG-ID "msg"` (also `bgz bug comment` / `bgz feature comment FEAT-ID "msg"`). Comments are their own commands with a positional message, never a `--comment` flag. Always quote titles: an unknown verb followed by an ID is rejected, not silently created.
+- PLATFORM FEEDBACK: `bgz feedback "title" -t bug` files TO Buggazi itself; `bgz feedback delete FID` withdraws it while still untouched.
 - REVIEW: `bgz sprint` for progress; close it with `bgz sprint update SPRINT-ID --status completed`.
 - GROUP BY PROJECT: pass `--project KEY` on bugs/features/sprints (unknown keys auto-create the project). `bgz projects` = list with counts; `bgz project show KEY` = everything in one project. Unlimited on every plan.
 
