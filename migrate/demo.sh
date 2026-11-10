@@ -17,7 +17,7 @@
 # …or point --file at your own CSV export — no token needed.
 #
 # Usage:  ./demo.sh [jira|linear|shortcut] [--yes]
-# Needs:  bgz (npm install -g buggazi) + logged in (bgz login).
+# Needs:  bgz (npm install -g @buggaziai/cli) + logged in (bgz login).
 
 set -euo pipefail
 
@@ -33,7 +33,7 @@ esac
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 FILE="$DIR/examples/${SOURCE}-export.csv"
 
-command -v bgz >/dev/null 2>&1 || { echo "bgz not found — install with: npm install -g buggazi"; exit 1; }
+command -v bgz >/dev/null 2>&1 || { echo "bgz not found — install with: npm install -g @buggaziai/cli"; exit 1; }
 [ -f "$FILE" ] || { echo "Missing sample export: $FILE"; exit 1; }
 
 # Optional scope label — carried through file mode for realism (not required).

@@ -23,7 +23,7 @@ jobs:
           node-version: 20
 
       - name: Install bgz
-        run: npm install -g buggazi
+        run: npm install -g @buggaziai/cli
 
       - name: Configure bgz
         run: bgz login --local --key "$BUGGAZI_KEY"

@@ -91,7 +91,7 @@ Every source resolves to the same thing: bugs and features with the right severi
 
 ## Before you start
 
-1. Install and sign in: `npm install -g buggazi` then `bgz login --local --key YOUR_KEY`
+1. Install and sign in: `npm install -g @buggaziai/cli` then `bgz login --local --key YOUR_KEY`
 2. Either grab an API token for your source (see each guide) **or** export it to CSV — no token needed for `--file`.
 3. Run with `--dry-run`, eyeball the preview, then run for real.
 

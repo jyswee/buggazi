@@ -1,7 +1,7 @@
 # bgz
 
 [![npm version](https://img.shields.io/npm/v/%40buggaziai%2Fcli.svg)](https://www.npmjs.com/package/@buggaziai/cli)
-[![MCP](https://img.shields.io/badge/MCP-73_tools-blue)](https://buggazi.ai/docs/quickstart/remote-mcp.html)
+[![MCP](https://img.shields.io/badge/MCP-74_tools-blue)](https://buggazi.ai/docs/quickstart/remote-mcp.html)
 [![Agent DMs + Channels](https://img.shields.io/badge/agents-DMs%20%2B%20channels-f97316)](#channels--dms--slack-for-your-agents)
 [![smithery badge](https://smithery.ai/badge/jyswee/buggazi)](https://smithery.ai/servers/jyswee/buggazi)
 
@@ -174,7 +174,7 @@ Two details agents (and their humans) appreciate: DM threads are **per agent key
 
 ## MCP Server
 
-Prefer tools over a CLI? `bgz` ships an MCP server. Point Claude Code (or any MCP client) at it and your agent gets **73 native tools**: bugs, features, sprints, contracts, channels, DMs, notifications, audit. The whole platform.
+Prefer tools over a CLI? `bgz` ships an MCP server. Point Claude Code (or any MCP client) at it and your agent gets **74 native tools**: bugs, features, sprints, contracts, channels, DMs, notifications, audit. The whole platform.
 
 ```bash
 claude mcp add buggazi -- bgz mcp-serve
@@ -198,12 +198,14 @@ No key yet? Start it without one: the server boots in onboarding mode with a `bu
 
 ### Remote MCP — zero install
 
-No CLI at all? Claude Web, Claude Desktop, Raycast, or any hosted MCP client can connect straight to our remote server. Same toolset (74 tools: everything the local server has, plus `buggazi_start_trial` for keyless onboarding), same API key, nothing to install:
+No CLI at all? Claude Web, Claude Desktop, Raycast, or any hosted MCP client can connect straight to our remote server. Same toolset, plus `buggazi_start_trial` for keyless onboarding, same API key, nothing to install:
 
 ```
-URL:  https://mcp.buggazi.com/sse
+URL:  https://mcp.buggazi.com/mcp   (Streamable HTTP: use this for claude.ai connectors)
 Auth: Authorization: Bearer YOUR_API_KEY
 ```
+
+Legacy SSE clients can still use `https://mcp.buggazi.com/sse`.
 
 Setup guide: [Remote MCP quickstart](https://buggazi.ai/docs/quickstart/remote-mcp.html).
 
@@ -229,7 +231,7 @@ Payloads are HMAC-SHA256 signed (`X-Buggazi-Signature`). Copy-paste receiver tha
 - **Snapshots** - terminal project views, shareable HTML links
 - **Migration** - import from Jira, Linear, or Shortcut via API or plain CSV export, always with `--dry-run`
 - **Webhooks & notifications** - signed HTTP callbacks + `bgz notifications` for polling
-- **MCP server** - 73 tools local (`bgz mcp-serve`), 74 fully remote (`mcp.buggazi.com`): Claude Code, Claude Web, Cursor, Raycast, any MCP client
+- **MCP server** - 74 tools local (`bgz mcp-serve`), or fully remote (`mcp.buggazi.com`): Claude Code, Claude Web, Cursor, Raycast, any MCP client
 - **Audit trail** - immutable event log, audit-ready for the EU AI Act, Colorado AI Act and Texas TRAIGA, exportable as PDF, CSV, or JSON
 - **Human dashboard sign-in** - GitHub OAuth or email+password, optional TOTP 2FA with backup codes. Agents work the API, humans monitor securely
 - **Referrals** - `bgz refer` gives you a code and share link. Each referral that becomes a paying customer earns you 3 months of your plan free as account credit (up to 12 free months per rolling year)
@@ -258,6 +260,18 @@ If not configured: bgz login --local --key YOUR_KEY
 Run `bgz init --agent-schema` — it returns every command + valid flags.
 This is the single source of truth: if it is not in the schema, do not use it.
 ```
+
+### Claude Code: let your agent run bgz on its own
+
+```bash
+bgz init --claude-hooks
+```
+
+Run this once per project. Claude Code asks a human to approve each new shell command shape, so without a `Bash(bgz:*)` entry in `permissions.allow` your agent stops and waits on every new `bgz` call and cannot work autonomously. Granting it is a human decision, so run this yourself instead of having the agent edit its own settings. The command merges it into `.claude/settings.json` for you. Prefer to do it by hand? Add `"Bash(bgz:*)"` to `permissions.allow` yourself.
+
+The same command installs the schema gate, which is what actually vets each command once the prompts are gone. It writes `.claude/bgz-gate.js` and `.claude/bgz-refresh.sh` and merges the hook entries into `.claude/settings.json` (existing hooks are preserved; Claude Code asks you to approve project hooks on first run). SessionStart refreshes the live agent-schema and reminds the agent this project tracks work in Buggazi. PreToolUse validates every `bgz` command against that schema before it runs: an invented verb or subcommand is blocked with an error naming the correct command, so the agent self-corrects in the same turn. Raw curl writes against the Buggazi API get redirected to the CLI or the remote MCP.
+
+Fail-open by design: if bgz or the schema file is unavailable, everything passes through and your session is never blocked. `--print` previews without writing, `--force` regenerates over your edited copies. Commit `.claude/` so every teammate picks the hooks up; keep `.bgz/` gitignored. Other agents (Cursor, Cline, Aider, web) keep using the config-file snippet above.
 
 ## Why this exists
 

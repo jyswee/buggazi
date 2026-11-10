@@ -5,7 +5,7 @@ This project uses Buggazi for bug tracking, feature planning, and sprint managem
 ## Setup (one-time)
 
 ```bash
-npm install -g buggazi
+npm install -g @buggaziai/cli
 bgz login --local --key YOUR_API_KEY
 ```
 
