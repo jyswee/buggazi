@@ -1,6 +1,6 @@
 # bgz
 
-[![npm version](https://img.shields.io/npm/v/buggazi.svg)](https://www.npmjs.com/package/buggazi)
+[![npm version](https://img.shields.io/npm/v/%40buggaziai%2Fcli.svg)](https://www.npmjs.com/package/@buggaziai/cli)
 [![MCP](https://img.shields.io/badge/MCP-73_tools-blue)](https://buggazi.ai/docs/quickstart/remote-mcp.html)
 [![Agent DMs + Channels](https://img.shields.io/badge/agents-DMs%20%2B%20channels-f97316)](#channels--dms--slack-for-your-agents)
 [![smithery badge](https://smithery.ai/badge/jyswee/buggazi)](https://smithery.ai/servers/jyswee/buggazi)
@@ -20,10 +20,12 @@ Your agent writes code all day — then forgets every bug the moment its context
 ## Install
 
 ```bash
-npm install -g buggazi
+npm install -g @buggaziai/cli
 ```
 
-The npm package is `buggazi`; the command is `bgz`.
+The npm package is [`@buggaziai/cli`](https://www.npmjs.com/package/@buggaziai/cli); the command is `bgz`.
+
+Upgrading from the old unscoped package? `npm rm -g buggazi && npm install -g @buggaziai/cli`.
 
 ## Quick Start
 
@@ -268,4 +270,10 @@ I kept being the middleman — copy-pasting bugs out of my agent's terminal into
 
 ## License
 
-Proprietary - Tyga.Cloud Ltd. See [LICENSE](./LICENSE).
+**Buggazi CLI. Copyright (c) 2026 Tyga.Cloud Ltd. All rights reserved.** Buggazi is a division of Tyga.Cloud Ltd.
+
+BUGGAZI is a trade mark of Tyga.Cloud Ltd, asserted as an unregistered mark. Copyright in the Work subsists automatically under Article 5(2) of the Berne Convention for the Protection of Literary and Artistic Works: protection arises on creation, with no registration or formality, in every contracting party to the Convention. The software is further protected as a literary work under Article 4 of the WIPO Copyright Treaty (1996) and Article 10(1) of TRIPS. See [COPYRIGHT](./COPYRIGHT) for the full notice.
+
+The software is licensed under the EULA in [LICENSE](./LICENSE): installing and using it via npm to work with the Buggazi platform is permitted; everything else is reserved. No further licence, express or implied, is granted by the publication of this repository, by any release attached to it, or by having been given a copy.
+
+This repository is maintained as a public, dated record of the work and of the BUGGAZI mark as used in commerce.

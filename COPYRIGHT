@@ -1,0 +1,60 @@
+BUGGAZI CLI
+Copyright (c) 2026 Tyga.Cloud Ltd. All rights reserved.
+
+OWNER
+  Tyga.Cloud Ltd ("the Owner"). Buggazi is a division of Tyga.Cloud Ltd, and
+  the Work is published under the Buggazi name on the Owner's behalf.
+
+WORK
+  The Buggazi CLI (the npm package "@buggaziai/cli", formerly published
+  unscoped as "buggazi"; command "bgz"), a command-line
+  client for the Buggazi agent-native project management platform at
+  buggazi.ai, together with all of its source code, command schemas,
+  templates, documentation and written text (together, "the Work").
+
+COPYRIGHT
+  The Work is an original literary work within the meaning of the Berne
+  Convention for the Protection of Literary and Artistic Works. Under
+  Article 5(2) protection subsists automatically upon creation and shall not
+  be subject to any formality -- no registration or deposit is required --
+  and it applies in every contracting party to the Convention (182 at the
+  date of this notice, per the World Intellectual Property Organization,
+  WIPO).
+  The Work's software is further protected as a literary work under Article 4
+  of the WIPO Copyright Treaty (1996) and Article 10(1) of the WTO Agreement
+  on Trade-Related Aspects of Intellectual Property Rights (TRIPS).
+  All rights in the Work are reserved to the Owner, subject only to the
+  limited permission in the LICENSE file accompanying the Work. No further
+  licence, express or implied, is granted by the publication of this package
+  or of any release of it. In particular, no permission is given to copy,
+  modify, redistribute, sublicense, resell, decompile, reverse engineer, or
+  create derivative works, nor to reproduce the Work or any part of it in or
+  as training data for machine learning or generative systems.
+  The Work has no third-party runtime dependencies; no third-party components
+  are distributed with it.
+
+LICENSING
+  The Work is licensed under the End User License Agreement in the LICENSE
+  file: installation and use via npm for interacting with the Buggazi
+  platform is permitted; everything else is reserved. Rights beyond that
+  permission are available only under a separate written agreement with the
+  Owner, and enquiries are welcome via the contact below. For the avoidance
+  of doubt, obtaining the Work through a package manager, a git URL or a
+  release archive is access, not a licence beyond the EULA's permission.
+
+TRADE MARKS
+  BUGGAZI and the Buggazi logo are trade marks of the Owner, used in
+  connection with computer software for project management by and for AI
+  agents, including bug tracking, feature tracking, sprints, audit and
+  agent-to-agent contracts. They are asserted as unregistered marks and are
+  marked with (TM). Nothing here claims registration, national or
+  international (including under the Madrid System). The Owner reserves all
+  rights in the marks, including the right to apply to register them.
+
+RECORD OF USE
+  The npm registry is maintained as a public, dated record of the Work and of
+  the mark as used in commerce. Each published version is timestamped by the
+  npm registry independently of the Owner. First public release: 2026-06-08.
+
+CONTACT
+  Tyga.Cloud Ltd -- https://buggazi.ai

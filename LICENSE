@@ -1,6 +1,13 @@
 Buggazi CLI - End User License Agreement
 
 Copyright (c) 2026 Tyga.Cloud Ltd. All rights reserved.
+Buggazi is a division of Tyga.Cloud Ltd.
+
+BUGGAZI is a trade mark of Tyga.Cloud Ltd, asserted as an unregistered mark.
+Copyright in this software subsists automatically under Article 5(2) of the
+Berne Convention for the Protection of Literary and Artistic Works, and the
+software is further protected under the WIPO Copyright Treaty (1996) and
+TRIPS; see the COPYRIGHT file for the full notice.
 
 Permission is granted to install and use this software via npm for its
 intended purpose (interacting with the Buggazi platform at buggazi.ai).
@@ -10,6 +17,12 @@ You may NOT:
 - Redistribute, sublicense, or resell this software
 - Modify or create derivative works based on this software
 - Remove or alter any copyright notices contained in this software
+- Reproduce this software or any part of it in or as training data for
+  machine learning or generative systems
+
+No licence beyond the permission above is granted by the publication of this
+package, by installing it through a package manager, or by having been given
+a copy.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -18,4 +31,4 @@ TYGA.CLOUD LTD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Full terms of service: https://buggazi.ai/terms.html
+Full notice: COPYRIGHT. Full terms of service: https://buggazi.ai/terms.html
